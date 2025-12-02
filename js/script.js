@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
              if (!EMAIL_REGEX.test(email)) registerMessage.textContent = 'Por favor, ingresa un correo electrónico válido.';
              else if (!MOBILE_REGEX.test(mobileNumber)) registerMessage.textContent = 'Por favor, ingresa un número de móvil válido.';
              else if (password !== confirmPassword) registerMessage.textContent = 'Las contraseñas no coinciden.';
-             else if (!PASSWORD_REGEX.test(password)) registerMessage.textContent = 'Contraseña debe tener min. 8 chars, Mayús, Minús, Número y Símbolo.';
+             else if (!PASSWORD_REGEX.test(password)) registerMessage.textContent = 'Contraseña debe tener min. 8 caracteres, Mayusculas, Minusculas, Números y Símbolos.';
              return;
         }
         
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (!PASSWORD_REGEX.test(newPassword)) {
-             resetMessage.textContent = 'La nueva contraseña debe tener min. 8 chars, Mayús, Minús, Número y Símbolo.';
+             resetMessage.textContent = 'La nueva contraseña debe tener min. 8 caracteres, Mayusculas, Minusculas, Números y Símbolos.';
             return;
         }
         
@@ -280,4 +280,5 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     checkSession();
+
 });
