@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Completo de Registro, Inicio de Sesión y Recuperación de Contraseña con Validaciones y Seguridad Básica</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sistema de Registro</h1>
+
+        <section id="login-section" class="form-section active">
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Correo Electrónico (Usuario)" required>
+                
+                <div class="password-container">
+                    <input type="password" id="login-password" placeholder="Contraseña" required>
+                    <span class="toggle-password" data-target="login-password">👁️</span>
+                </div>
+                
+                <p id="login-message" class="error-message"></p>
+                <p id="blocked-recovery-link" class="switch-link hidden" data-target="recover">
+                    Recuperar contraseña
+                </p>
+
+                <button type="submit">Entrar</button>
+            </form>
+            <p class="switch-link" data-target="register">¿No tienes cuenta? Regístrate</p>
+            <p class="switch-link" data-target="recover">¿Olvidaste tu contraseña? Recupérala</p>
+        </section>
+
+        <section id="register-section" class="form-section hidden">
+            <h2>Creación de Cuenta</h2>
+            <form id="register-form">
+                <input type="text" id="register-full-name" placeholder="Nombre completo" required>
+                <input type="tel" id="register-mobile" placeholder="Número de móvil" required>
+                
+                <input type="email" id="register-email" placeholder="Correo Electrónico (Nombre de usuario)" required>
+                
+                <div class="password-container">
+                    <input type="password" id="register-password" placeholder="Contraseña (Mín. 8, Mayús, Núm, Símbolo)" required>
+                    <span class="toggle-password" data-target="register-password">👁️</span>
+                </div>
+                
+                <div class="password-container">
+                    <input type="password" id="register-confirm-password" placeholder="Confirmar Contraseña" required>
+                    <span class="toggle-password" data-target="register-confirm-password">👁️</span>
+                </div>
+                
+                <p id="register-message" class="error-message"></p>
+                <button type="submit">Registrarme</button>
+            </form>
+            <p class="switch-link" data-target="login">Volver a Iniciar Sesión</p>
+        </section>
+
+        <section id="recover-section" class="form-section hidden">
+            <h2>Restablecer Contraseña</h2>
+            
+            <p>Ingresa tu correo registrado y la nueva contraseña.</p>
+            <form id="reset-password-form">
+                
+                <input type="email" id="reset-email-identifier" placeholder="Correo Electrónico del Usuario" required>
+                
+                <div class="password-container">
+                    <input type="password" id="reset-new-password" placeholder="Nueva Contraseña" required>
+                    <span class="toggle-password" data-target="reset-new-password">👁️</span>
+                </div>
+
+                <div class="password-container">
+                    <input type="password" id="reset-confirm-password" placeholder="Confirmar Nueva Contraseña" required>
+                    <span class="toggle-password" data-target="reset-confirm-password">👁️</span>
+                </div>
+
+                <p id="reset-message" class="error-message"></p>
+                <button type="submit">Cambiar Contraseña</button>
+            </form>
+
+            <p class="switch-link" data-target="login">Volver a Iniciar Sesión</p>
+        </section>
+        
+        <section id="welcome-section" class="form-section hidden">
+            <h2>¡Bienvenido/a!</h2>
+            <p id="welcome-message-text">Has iniciado sesión exitosamente.</p>
+            <button id="logout-button">Cerrar Sesión</button>
+        </section>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
